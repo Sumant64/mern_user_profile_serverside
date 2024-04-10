@@ -2,6 +2,7 @@ const express = require('express');
 const User = require('../modal/userSchema');
 const router = express.Router();
 const bcrypt = require('bcrypt');
+const Authenticate = require('../middleware/authenticate');
 require('../db/conn');
 
 
@@ -85,6 +86,11 @@ router.post('/signin', async (req, res) => {
     } catch (err) {
         console.log(err);
     }
+})
+
+// about
+router.get('/about', Authenticate, (req, res) => {
+    res.send(req.rootUser);
 })
 
 
