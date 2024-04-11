@@ -3,9 +3,11 @@ const express = require("express");
 const app = express();
 dotenv.config({path: './config.env'});
 require('./db/conn');
+const cors = require('cors')
 
 
 app.use(express.json());
+app.use(cors());
 
 
 //we link the router files
