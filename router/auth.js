@@ -13,9 +13,9 @@ router.get('/', (req, res) => {
 
 
 router.post('/register', async (req, res) => {
-    const { name, email, phone, work, password, cpassword } = req.body;
+    const { name, email, phone, work, password, cpassword, skills } = req.body;
 
-    if (!name || !email || !phone || !work || !password || !cpassword) {
+    if (!name || !email || !phone || !work || !password || !cpassword || !skills) {
         return res.status(422).json({ error: "plz fill the field properly" });
     }
 
@@ -27,13 +27,19 @@ router.post('/register', async (req, res) => {
         } else if (password != cpassword) {
             return res.status(422).json({ error: "password is not matching" });
         } else {
+            let skillArr = skills.split(',');
+            skillArr = skillArr.map((item) => {
+                return item.trim()
+            })
+
             const user = new User({
                 name,
                 email,
                 phone,
                 work,
                 password,
-                cpassword
+                cpassword,
+                skills: skillArr
             });
             await user.save();
             res.status(201).json({ message: "User registered successfully" });
