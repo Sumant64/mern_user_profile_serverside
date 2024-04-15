@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "6c0fd23f-9c23-4c8c-a771-f2e53403c664",
+		"name": "User profile",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20808344"
+	},
+	"item": [
+		{
+			"name": "sign in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ritu@gmail.com\",\r\n    \"password\": \"ritu\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/signin",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "about",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjFkMDU0MjBmN2VlZjQ0ZGM5MGVkNDYiLCJpYXQiOjE3MTMxODU0MzZ9.uktazj9vIuFyaOX7517ur8O8A80SO551Odb1K625AfM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/about",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"about"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get data",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjFkMDU0MjBmN2VlZjQ0ZGM5MGVkNDYiLCJpYXQiOjE3MTMxODU0MzZ9.uktazj9vIuFyaOX7517ur8O8A80SO551Odb1K625AfM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/getdata",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getdata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contact",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjFkMDU0MjBmN2VlZjQ0ZGM5MGVkNDYiLCJpYXQiOjE3MTMxODU0MzZ9.uktazj9vIuFyaOX7517ur8O8A80SO551Odb1K625AfM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"sumant\",\r\n    \"phone\": \"987567788\",\r\n    \"email\": \"su@gmail.com\",\r\n    \"message\": \"hello there\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/contact",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjExZTExMjBkOWJlZTFjNjM0ODc4ZDMiLCJpYXQiOjE3MTI3Mjk5MjN9.9fBAFjXqWykwiIWPxM5YldAzzr9qITbCjUGBqBFpIhE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/logout",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Kishan\",\r\n    \"email\": \"kishan@gmail.com\",\r\n    \"phone\": \"7856340987\",\r\n    \"work\": \"Developer\",\r\n    \"password\": \"kishan34\",\r\n    \"cpassword\": \"kishan34\",\r\n    \"skills\": \"HTML, CSS, JS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/register",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
